@@ -10,6 +10,7 @@ class DatabaseConnection:
         return self.conection
     def __exit__(self, exc_type, exc_val, exc_tb):
         if exc_tb or exc_val or exc_tb:
-            
+            self.conection.close()
+        else:
             self.conection.commit()
-            self.connection.close()
+            self.conection.close()
